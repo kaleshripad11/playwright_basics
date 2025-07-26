@@ -26,5 +26,17 @@ def sync_context_demo():
         # Close browser session
         context.close()
 
+# Browser context with async api
+async def async_context_demo():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=False)
+        context = await browser.new_context()
+        page1 = await context.new_page()
+        page2 = await context.new_page()
+        await page1.goto("https://www.playwright.dev/python")    
+        await page2.goto("https://www.playwright.dev/java")       
+        await context.close()
+
 if __name__ == "__main__":
     sync_context_demo()    
+    asyncio.run(async_context_demo())
