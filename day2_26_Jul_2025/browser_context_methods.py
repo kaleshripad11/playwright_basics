@@ -1,5 +1,4 @@
 from playwright.sync_api import sync_playwright
-import time
 
 app_url = "https://www.google.com"
 
