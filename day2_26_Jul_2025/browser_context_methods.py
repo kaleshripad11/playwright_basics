@@ -1,11 +1,12 @@
 from playwright.sync_api import sync_playwright
+import time
 
 app_url = "https://www.google.com"
 
-def browser_context_cookies_func():
+def browser_context_methods():
     with sync_playwright() as p:
         # Create browser variable to hold webkit browser object
-        browser = p.webkit.launch()
+        browser = p.webkit.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         page.goto(app_url)
@@ -18,4 +19,4 @@ def browser_context_cookies_func():
         context.close()
 
 if __name__ == "__main__":
-    browser_context_cookies_func()
+    browser_context_methods()
