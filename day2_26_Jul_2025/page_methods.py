@@ -11,5 +11,8 @@ def pages_builtin_methods():
         # Log messages when specific event occures using once() method
         page.once("load", lambda: print("page loaded"))
 
+        # content() => Get html content of a page
+        print(page.content())
+
 if __name__ == "__main__":
     pages_builtin_methods()
