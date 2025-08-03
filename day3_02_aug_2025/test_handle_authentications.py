@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, Playwright, expect, sync_playwright
+from playwright.sync_api import Page, expect
 
 def test_login_with_valid_credentials(page: Page):
     # The 'page: Page' argument in the function signature indicates that this test is designed to be run with the pytest-playwright plugin, 
