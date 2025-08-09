@@ -12,3 +12,5 @@ with sync_playwright() as p:
     page.locator("a", has_text="Docs").click()
     print(f"Page title: {page.title()}")
     expect(page).to_have_title("Installation | Playwright Python")
+    context.close()
+    browser.close()
