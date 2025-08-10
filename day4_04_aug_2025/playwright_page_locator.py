@@ -32,8 +32,13 @@ with sync_playwright() as p:
 
     # Locate element using CSS Selector
     page2.locator("input[name='username']").fill("Admin")
-    page2.locator("input[name='password']").fill("Admin")
+    page2.locator("input[name='password']").fill("admin123")
     page2.locator("button[type='submit']").click()
 
+    # Locate element using XPath Selector
+    text = page2.locator("//div/div/div/header/div/div/span/h6").text_content()
+    print(text)
 
+    # Locate by placeholder
+    page2.locator("[placeholder=Search]").fill("admin")
     browser.close()
