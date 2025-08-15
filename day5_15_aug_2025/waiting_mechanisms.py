@@ -3,7 +3,6 @@
 # In this code will be using some of the main methods which are available in playwright & can be used regularly #
 
 from playwright.sync_api import sync_playwright, Page, expect
-import re
 
 def demo_wait_for_selector(p: Page):
     # To run this method without pytest - will require page object to be passed as parameter
