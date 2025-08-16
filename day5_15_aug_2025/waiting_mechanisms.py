@@ -11,6 +11,7 @@ def demo_wait_for_selector(p: Page):
     p.wait_for_load_state('domcontentloaded')
     p.locator("button", has_text="Start").click()
     expect(p.locator("h4", has_text="hidden")).to_be_visible()
+    p.wait_for_timeout(5000)
 
 def login_to_oragne_hrm(p: Page, username, password):
     p.goto("https://opensource-demo.orangehrmlive.com/")
@@ -25,5 +26,5 @@ def login_to_oragne_hrm(p: Page, username, password):
 with sync_playwright() as p:
     browser = p.webkit.launch(headless=False, slow_mo=1000)
     page = browser.new_page()
-    #demo_wait_for_selector(page)
+    demo_wait_for_selector(page)
     login_to_oragne_hrm(page, "Admin", "admin123")
