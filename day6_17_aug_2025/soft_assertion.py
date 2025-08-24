@@ -7,10 +7,15 @@ def soft_assert_demo():
         page = context.new_page()
         page.goto("https://www.amazon.in/")
         try:
-            assert page.locator("#nav-logo-sprites").is_enabled() == True
+            assert page.locator("#nav-logo-sprites").is_enabled() == False
             print("Amazonn logo check validation successful!!!")
         except AssertionError as e:
-            print(f"Exception occured {e}")
-        expect(page.locator("#icp-nav-link-inner")).to_be_visible()
+            print(f"Exception occured: {e.__cause__}")
+        
+        try:
+            page.locator("#icp-nav-link-inner").is_visible() == False
+            print("Navigation check validation successful!!!")
+        except AssertionError as e:
+            print(f"Exception occured: {e}")
 
 soft_assert_demo()
