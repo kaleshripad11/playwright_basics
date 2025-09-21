@@ -21,6 +21,7 @@ def launch_new_tab():
         for i in tab_url:
             print(i)
             '''
+                Output:
                 <Page url='https://playwright.dev/python/docs/pages'>
                 <Page url='https://github.com/kaleshripad11'>
             '''
