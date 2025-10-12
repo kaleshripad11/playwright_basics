@@ -21,6 +21,7 @@ def demo_video_recording_using_playwright():
         page.get_by_role("button", name="Login").click()
         expect(page.get_by_alt_text("client brand banner")).to_be_visible()
         print(page.video)       # Will print the page URL for which video is recorded
+        print(page.video.path())       # Will print the path for recording
         context.close()
         browser.close()
 
