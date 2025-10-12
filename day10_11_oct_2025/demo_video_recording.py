@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright, expect
 
 def demo_video_recording_using_playwright():
     with sync_playwright() as p:
-        browser = p.firefox.launch(headless=False, slow_mo=1000)
+        browser = p.firefox.launch(headless=False, slow_mo=500)
         context = browser.new_context(
                 viewport={'width':1920, 'height':1080}, 
                 screen={'width':1920, 'height':1080},
