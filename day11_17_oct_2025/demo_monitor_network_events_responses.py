@@ -9,7 +9,7 @@ def demo_monitor_network_events_responses():
 
         print("=> Code | Request URL | Response Message")
         # Monitor & log every single request on console
-        page.on("response", lambda response: print(f"=> {response.status} | {response.url} | {response.text}"))
+        page.on("response", lambda response: print(f"=> {response.status} | {response.url} | {response.text()}"))
 
         # Navigate to URL to capture/log the api's in network tab
         page.goto("https://jsonplaceholder.typicode.com/")
