@@ -9,6 +9,7 @@ class PageBase:
         self.page.locator(locator).click()
 
     def enter_text(self, locator: Locator, input_text: str):
+        self.page.wait_for_load_state("domcontentloaded")
         self.page.locator(locator).fill(input_text)
 
     def navigate_to_url(self, page_url: str):

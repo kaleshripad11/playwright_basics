@@ -13,9 +13,9 @@ class PageLogin(PageBase):
     
 
     def login(self, username, password):
-        self.page.wait_for_timeout(15000)
+        #self.page.wait_for_timeout(15000)
         self.page.goto("https://admin-demo.nopcommerce.com/")
-        self.page.wait_for_timeout(90000)
+        #self.page.wait_for_timeout(90000)
         self.enter_text(self.txt_email, username)
         self.enter_text(self.txt_password, password)
         self.click(self.btn_login)
